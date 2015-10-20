@@ -1,0 +1,28 @@
+textarea {
+    width: 500px;
+    font-size: 20px;
+}
+textarea#compressed {
+    height: 150px;
+}
+textarea#ordered {
+    height: 300px;
+}
+button#orderize, button#compressize {
+    width: 120px;
+    height: 45px;
+    font-size: 25px;
+}
+button#selectCompressed, button#selectOrdered {
+    width: 120px;
+    height: 10px;
+    border: 1px;
+}
+.error {
+    background-color: #ff9999;
+}
+#message {
+    height: 25px;
+    font-size: 18px;
+    color: #ff0000;
+}
