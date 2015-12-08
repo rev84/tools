@@ -34,14 +34,16 @@ initialize = ->
     select.on(
       'change'
       ->
-        console.log 'cookie ['+$(this).attr('id')+'] '+$(this).val()
-        $.cookie($(this).attr('id'), $(this).val(), { expires: 365*100 });
+        val = $(this).val()
+        console.log 'cookie ['+$(this).attr('id')+'] '+val
+        $.cookie($(this).attr('id'), val, { expires: 365*100 });
     )
     $('#no_'+id).on(
       'change'
       ->
-        console.log 'cookie ['+$(this).attr('id')+'] '+$(this).val()
-        $.cookie($(this).attr('id'), (if $(this).prop('checked') then 1 else 0), { expires: 365*100 });
+        val = if $(this).prop('checked') then 1 else 0
+        console.log 'cookie ['+$(this).attr('id')+'] '+val
+        $.cookie($(this).attr('id'), val, { expires: 365*100 });
     )
     # クッキーの値を入れる
     val = if $.cookie(id)? then $.cookie(id) else content[0]

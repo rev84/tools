@@ -31,14 +31,18 @@ initialize = function() {
       select.append($('<option>').val(v).html(v));
     }
     select.on('change', function() {
-      console.log('cookie [' + $(this).attr('id') + '] ' + $(this).val());
-      return $.cookie($(this).attr('id'), $(this).val(), {
+      var val;
+      val = $(this).val();
+      console.log('cookie [' + $(this).attr('id') + '] ' + val);
+      return $.cookie($(this).attr('id'), val, {
         expires: 365 * 100
       });
     });
     $('#no_' + id).on('change', function() {
-      console.log('cookie [' + $(this).attr('id') + '] ' + $(this).val());
-      return $.cookie($(this).attr('id'), ($(this).prop('checked') ? 1 : 0), {
+      var val;
+      val = $(this).prop('checked') ? 1 : 0;
+      console.log('cookie [' + $(this).attr('id') + '] ' + val);
+      return $.cookie($(this).attr('id'), val, {
         expires: 365 * 100
       });
     });
