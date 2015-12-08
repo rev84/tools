@@ -38,12 +38,17 @@ initialize = function() {
     });
     $('#no_' + id).on('change', function() {
       console.log('cookie [' + $(this).attr('id') + '] ' + $(this).val());
-      return $.cookie($(this).attr('id'), $(this).val(), {
+      return $.cookie($(this).attr('id'), ($(this).prop('checked') ? 1 : 0), {
         expires: 365 * 100
       });
     });
     val = $.cookie(id) != null ? $.cookie(id) : content[0];
-    results.push(select.val(val));
+    select.val(val);
+    if (($.cookie('no_' + id) != null) && Number($.cookie('no_' + id)) === 1) {
+      results.push($('#no_' + id).prop('checked', true));
+    } else {
+      results.push(void 0);
+    }
   }
   return results;
 };

@@ -41,11 +41,12 @@ initialize = ->
       'change'
       ->
         console.log 'cookie ['+$(this).attr('id')+'] '+$(this).val()
-        $.cookie($(this).attr('id'), $(this).val(), { expires: 365*100 });
+        $.cookie($(this).attr('id'), (if $(this).prop('checked') then 1 else 0), { expires: 365*100 });
     )
     # クッキーの値を入れる
     val = if $.cookie(id)? then $.cookie(id) else content[0]
     select.val(val)
+    $('#no_'+id).prop('checked', true) if $.cookie('no_'+id)? and Number($.cookie('no_'+id)) is 1
 
 defGenerate = ->
   $('#generate').on(
