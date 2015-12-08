@@ -36,6 +36,12 @@ initialize = function() {
         expires: 365 * 100
       });
     });
+    $('#no_' + id).on('change', function() {
+      console.log('cookie [' + $(this).attr('id') + '] ' + $(this).val());
+      return $.cookie($(this).attr('id'), $(this).val(), {
+        expires: 365 * 100
+      });
+    });
     val = $.cookie(id) != null ? $.cookie(id) : content[0];
     results.push(select.val(val));
   }
@@ -44,14 +50,17 @@ initialize = function() {
 
 defGenerate = function() {
   return $('#generate').on('click', function() {
-    var allCharNum, allSet, i, intMin, intSet, j, k, l, lowerMin, lowerSet, m, n, notSp, password, ref, ref1, ref2, ref3, ref4, resArray, restNum, spMin, spSet, upperMin, upperSet;
+    var allCharNum, allSet, i, intMin, intSet, j, k, l, lowerMin, lowerSet, m, n, notInt, notLow, notSp, notUp, password, ref, ref1, ref2, ref3, ref4, resArray, restNum, spMin, spSet, upperMin, upperSet;
     resArray = [];
     allCharNum = Number($('#all_char_num').val());
     upperMin = Number($('#upper_char_num').val());
     lowerMin = Number($('#lower_char_num').val());
     intMin = Number($('#int_char_num').val());
     spMin = Number($('#sp_char_num').val());
-    notSp = $('#sp_char_set').val() === '' || spMin === 0;
+    notUp = $('#no_upper_char_num').prop('checked');
+    notLow = $('#no_lower_char_num').prop('checked');
+    notInt = $('#no_int_char_num').prop('checked');
+    notSp = $('#sp_char_set').val() === '';
     if (notSp) {
       spMin = 0;
     }
@@ -60,20 +69,26 @@ defGenerate = function() {
       return;
     }
     allSet = [];
-    upperSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
-    allSet = allSet.concat(upperSet);
-    for (i = j = 0, ref = upperMin; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
-      resArray.push(upperSet[mt_rand(0, upperSet.length - 1)]);
+    if (!notUp) {
+      upperSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+      allSet = allSet.concat(upperSet);
+      for (i = j = 0, ref = upperMin; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
+        resArray.push(upperSet[mt_rand(0, upperSet.length - 1)]);
+      }
     }
-    lowerSet = "abcdefghijklmnopqrstuvwxyz".split('');
-    allSet = allSet.concat(lowerSet);
-    for (i = k = 0, ref1 = lowerMin; 0 <= ref1 ? k < ref1 : k > ref1; i = 0 <= ref1 ? ++k : --k) {
-      resArray.push(lowerSet[mt_rand(0, lowerSet.length - 1)]);
+    if (!notLow) {
+      lowerSet = "abcdefghijklmnopqrstuvwxyz".split('');
+      allSet = allSet.concat(lowerSet);
+      for (i = k = 0, ref1 = lowerMin; 0 <= ref1 ? k < ref1 : k > ref1; i = 0 <= ref1 ? ++k : --k) {
+        resArray.push(lowerSet[mt_rand(0, lowerSet.length - 1)]);
+      }
     }
-    intSet = "0123456789".split('');
-    allSet = allSet.concat(intSet);
-    for (i = l = 0, ref2 = intMin; 0 <= ref2 ? l < ref2 : l > ref2; i = 0 <= ref2 ? ++l : --l) {
-      resArray.push(intSet[mt_rand(0, intSet.length - 1)]);
+    if (!notInt) {
+      intSet = "0123456789".split('');
+      allSet = allSet.concat(intSet);
+      for (i = l = 0, ref2 = intMin; 0 <= ref2 ? l < ref2 : l > ref2; i = 0 <= ref2 ? ++l : --l) {
+        resArray.push(intSet[mt_rand(0, intSet.length - 1)]);
+      }
     }
     if (!notSp) {
       spSet = $('#sp_char_set').val().split('');

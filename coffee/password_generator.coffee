@@ -37,6 +37,12 @@ initialize = ->
         console.log 'cookie ['+$(this).attr('id')+'] '+$(this).val()
         $.cookie($(this).attr('id'), $(this).val(), { expires: 365*100 });
     )
+    $('#no_'+id).on(
+      'change'
+      ->
+        console.log 'cookie ['+$(this).attr('id')+'] '+$(this).val()
+        $.cookie($(this).attr('id'), $(this).val(), { expires: 365*100 });
+    )
     # クッキーの値を入れる
     val = if $.cookie(id)? then $.cookie(id) else content[0]
     select.val(val)
@@ -52,24 +58,30 @@ defGenerate = ->
       lowerMin = Number $('#lower_char_num').val()
       intMin = Number $('#int_char_num').val()
       spMin = Number $('#sp_char_num').val()
-      notSp = $('#sp_char_set').val() is '' or spMin is 0
+      notUp = $('#no_upper_char_num').prop('checked')
+      notLow = $('#no_lower_char_num').prop('checked')
+      notInt = $('#no_int_char_num').prop('checked')
+      notSp = $('#sp_char_set').val() is ''
       spMin = 0 if notSp
       restNum = allCharNum - (upperMin + lowerMin + intMin + spMin)
       return if restNum < 0
       
       allSet = []
 
-      upperSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('')
-      allSet = allSet.concat upperSet
-      resArray.push upperSet[mt_rand(0, upperSet.length-1)] for i in [0...upperMin]
+      unless notUp
+        upperSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('')
+        allSet = allSet.concat upperSet
+        resArray.push upperSet[mt_rand(0, upperSet.length-1)] for i in [0...upperMin]
 
-      lowerSet = "abcdefghijklmnopqrstuvwxyz".split('')
-      allSet = allSet.concat lowerSet
-      resArray.push lowerSet[mt_rand(0, lowerSet.length-1)] for i in [0...lowerMin]
+      unless notLow
+        lowerSet = "abcdefghijklmnopqrstuvwxyz".split('')
+        allSet = allSet.concat lowerSet
+        resArray.push lowerSet[mt_rand(0, lowerSet.length-1)] for i in [0...lowerMin]
 
-      intSet = "0123456789".split('')
-      allSet = allSet.concat intSet
-      resArray.push intSet[mt_rand(0, intSet.length-1)] for i in [0...intMin]
+      unless notInt
+        intSet = "0123456789".split('')
+        allSet = allSet.concat intSet
+        resArray.push intSet[mt_rand(0, intSet.length-1)] for i in [0...intMin]
 
       unless notSp
         spSet = $('#sp_char_set').val().split('')
