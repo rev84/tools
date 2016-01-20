@@ -1,9 +1,9 @@
 $().ready ->
   $('#menu').html(
-    '<a href="./json_viewer.html">JSON Viewer</a>'+' / '+
-    '<a href="./case_converter.html">Case Converter</a>'+' / '+
-    '<a href="./password_generator.html">Password Generator</a>'+' / '+
-    '<a href="./qrcode.html">QRCode Converter</a>'
+    '<a href="./json_viewer.html"><img width="32" height="32" src="favicon/json_viewer.ico"></a>'+' / '+
+    '<a href="./case_converter.html"><img width="32" height="32" src="favicon/case_converter.ico"></a>'+' / '+
+    '<a href="./password_generator.html"><img width="32" height="32" src="favicon/password_generator.ico"></a>'+' / '+
+    '<a href="./qrcode.html"><img width="32" height="32" src="favicon/qrcode.ico"></a>'
   )
 
 mt_rand = (min, max)->
