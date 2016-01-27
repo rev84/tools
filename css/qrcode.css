@@ -1,9 +1,16 @@
-input {
+input#url {
     width: 500px;
     height: 30px;
-    font-size: 20px;
+    font-size: 120%;
     text-align:center;
     border:1px solid;
+}
+input#permalink {
+    width: 80%;
+    font-size: 100%;
+    text-align:center;
+    border:1px solid;
+    margin-top:20px;
 }
 button#convert {
     width: 180px;
