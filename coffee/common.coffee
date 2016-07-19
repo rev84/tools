@@ -5,6 +5,7 @@ $().ready ->
     '<a href="./password_generator.html"><img width="32" height="32" src="favicon/password_generator.ico"></a>'+' / '+
     '<a href="./qrcode.html"><img width="32" height="32" src="favicon/qrcode.ico"></a>'+' / '+
     '<a href="./anagram.html"><img width="32" height="32" src="favicon/anagram.ico"></a>'+' / '+
+    '<a href="./random_picker.html"><img width="32" height="32" src="favicon/random_picker.ico"></a>'+' / '+
     '<a href="https://github.com/rev84/tools" target="_blank">GitHub</a>'
   )
 

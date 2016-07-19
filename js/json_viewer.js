@@ -36,7 +36,7 @@ $().ready(function() {
       return false;
     }
     jsonStr = JSON.stringify(jsonArray, null, 4);
-    $('#ordered').val(jsonStr);
+    $('#ordered').val(jsonStr.replace(/\\n/g, "\n"));
   });
   $('#selectCompressed').on('click', function() {
     $('#compressed').select();

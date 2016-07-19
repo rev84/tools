@@ -27,7 +27,7 @@ $().ready ->
       $('#compressed').addClass 'error'
       return false
     jsonStr = JSON.stringify(jsonArray, null, 4)
-    $('#ordered').val jsonStr
+    $('#ordered').val jsonStr.replace(/\\n/g, "\n")
     return
   $('#selectCompressed').on 'click', ->
     $('#compressed').select()

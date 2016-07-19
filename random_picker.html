@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Random Picker</title>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="./favicon/random_picker.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/random_picker.js"></script>
+<link rel="stylesheet" href="./css/common.css" type="text/css" />
+<link rel="stylesheet" href="./css/random_picker.css" type="text/css" />
+</head>
+<body>
+<div id="menu"></div>
+
+<h1>Random Picker</h1>
+
+<div>
+  <p>
+    <textarea id="items"></textarea>
+  </p>
+
+  <p>
+    <span><input type="number" id="times" value="1">&nbsp;回抽選</span><br>
+    <input type="checkbox" id="unique">同じ項目は抽選しない<br>
+    <button id="pick">↓Pick↓</button>
+  </p>
+
+  <p>
+    <textarea id="result"></textarea>
+  </p>
+
+</div>
+</body>
+</html>
