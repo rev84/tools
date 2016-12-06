@@ -1,0 +1,46 @@
+html, body {
+  overflow-x: hidden;
+}
+
+textarea {
+  width: 90%;
+  height: 100px;
+}
+
+#scroll_space {
+  width: 100%;
+  /*background-color: #ff8888;*/
+  text-overflow: clip;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.scroll_body {
+  position: absolute;
+  top: 0px;
+  white-space: nowrap;
+}
+#content {
+}
+
+#font_size, #speed, #color, #end_space {
+  width: 50px;
+}
+.center {
+  text-align: center;
+}
+th {
+  background-color:#ccc;
+}
+.outline {
+  color: white !important;
+  text-shadow:
+    black 1px 1px 0px,
+    black -1px 1px 0px,
+    black -1px -1px 0px,
+    black 1px -1px 0px,
+    black 1px 0px 0px,
+    black 0px 1px 0px,
+    black -1px 0px 0px,
+    black 0px -1px 0px;
+}

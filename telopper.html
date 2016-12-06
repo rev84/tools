@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width">
+<title>Telopper</title>
+<link rel="shortcut icon" href="favicon/telopper.ico">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
+
+<!-- jQuery Plugin -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.1/jquery.datetimepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.1/jquery.datetimepicker.min.js"></script>
+
+
+<!-- Bootstrap -->
+<!--
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+-->
+
+<!-- mine -->
+<script src="./js/Utl.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/telopper.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/common.css">
+<link rel="stylesheet" type="text/css" href="./css/telopper.css">
+
+
+</head>
+
+<body>
+
+<center>
+
+<div id="menu"></div>
+
+
+<h1>Telopper</h1>
+
+<div id="scroll_space">
+
+</div>
+
+<div id="controller">
+
+
+<table border="1">
+<tr>
+  <th>本文</th>
+  <td>
+    <textarea id="content" class="form-control"></textarea>
+  </td>
+</tr>
+<tr>
+  <th>フォントサイズ</th>
+  <td>
+    <input type="text" id="font_size" value="50">px
+  </td>
+</tr>
+<tr>
+  <th>速度</th>
+  <td>
+    毎秒<input type="text" id="speed" value="50">px
+  </td>
+</tr>
+<tr>
+  <th>文末の空白</th>
+  <td>
+    <input type="text" id="end_space" value="2">文字
+  </td>
+</tr>
+<tr>
+  <th>文字色</th>
+  <td>
+    <input type="color" id="color" value="#000000">
+  </td>
+</tr>
+<tr>
+  <th>フォント</th>
+  <td>
+    <select id="font_family">
+      <option value="Angsana New">Angsana New</option>
+      <option value="AngsanaUPC">AngsanaUPC</option>
+      <option value="Aparajita">Aparajita</option>
+      <option value="Arabic Typesetting">Arabic Typesetting</option>
+      <option value="Arial">Arial</option>
+      <option value="Arial Black">Arial Black</option>
+      <option value="Arimo">Arimo</option>
+      <option value="Batang">Batang</option>
+      <option value="BatangChe">BatangChe</option>
+      <option value="Book Antiqua">Book Antiqua</option>
+      <option value="Bradley Hand ITC">Bradley Hand ITC</option>
+      <option value="Browallia New">Browallia New</option>
+      <option value="BrowalliaUPC">BrowalliaUPC</option>
+      <option value="Calibri">Calibri</option>
+      <option value="Calibri Light">Calibri Light</option>
+      <option value="Candara">Candara</option>
+      <option value="Century">Century</option>
+      <option value="Century Gothic">Century Gothic</option>
+      <option value="Consolas">Consolas</option>
+      <option value="Corbel">Corbel</option>
+      <option value="Cordia New">Cordia New</option>
+      <option value="CordiaUPC">CordiaUPC</option>
+      <option value="Courier">Courier</option>
+      <option value="Courier New">Courier New</option>
+      <option value="DaunPenh">DaunPenh</option>
+      <option value="DejaVu Sans Mono">DejaVu Sans Mono</option>
+      <option value="DejaVu Serif">DejaVu Serif</option>
+      <option value="DFKai-SB">DFKai-SB</option>
+      <option value="DilleniaUPC">DilleniaUPC</option>
+      <option value="DokChampa">DokChampa</option>
+      <option value="Dotum">Dotum</option>
+      <option value="DotumChe">DotumChe</option>
+      <option value="Ebrima">Ebrima</option>
+      <option value="Estrangelo Edessa">Estrangelo Edessa</option>
+      <option value="EucrosiaUPC">EucrosiaUPC</option>
+      <option value="Euphemia">Euphemia</option>
+      <option value="FangSong">FangSong</option>
+      <option value="FixedSys">FixedSys</option>
+      <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
+      <option value="FreesiaUPC">FreesiaUPC</option>
+      <option value="Freestyle Script">Freestyle Script</option>
+      <option value="French Script MT">French Script MT</option>
+      <option value="Gabriola">Gabriola</option>
+      <option value="Gadugi">Gadugi</option>
+      <option value="Gautami">Gautami</option>
+      <option value="Georgia">Georgia</option>
+      <option value="Gulim">Gulim</option>
+      <option value="GulimChe">GulimChe</option>
+      <option value="Gungsuh">Gungsuh</option>
+      <option value="GungsuhChe">GungsuhChe</option>
+      <option value="HandClap2">HandClap2</option>
+      <option value="Harp">Harp</option>
+      <option value="Harp2">Harp2</option>
+      <option value="HGP創英角ｺﾞｼｯｸUB">HGP創英角ｺﾞｼｯｸUB</option>
+      <option value="HGP教科書体">HGP教科書体</option>
+      <option value="HGP明朝B">HGP明朝B</option>
+      <option value="HGPｺﾞｼｯｸE">HGPｺﾞｼｯｸE</option>
+      <option value="HGPｺﾞｼｯｸM">HGPｺﾞｼｯｸM</option>
+      <option value="HGS創英角ｺﾞｼｯｸUB">HGS創英角ｺﾞｼｯｸUB</option>
+      <option value="HGS教科書体">HGS教科書体</option>
+      <option value="HGS明朝B">HGS明朝B</option>
+      <option value="HGSｺﾞｼｯｸE">HGSｺﾞｼｯｸE</option>
+      <option value="HGSｺﾞｼｯｸM">HGSｺﾞｼｯｸM</option>
+      <option value="HG丸ｺﾞｼｯｸM-PRO">HG丸ｺﾞｼｯｸM-PRO</option>
+      <option value="HG創英角ｺﾞｼｯｸUB">HG創英角ｺﾞｼｯｸUB</option>
+      <option value="HG創英角ﾎﾟｯﾌﾟ体">HG創英角ﾎﾟｯﾌﾟ体</option>
+      <option value="HG創英ﾌﾟﾚｾﾞﾝｽEB">HG創英ﾌﾟﾚｾﾞﾝｽEB</option>
+      <option value="HG教科書体">HG教科書体</option>
+      <option value="HG明朝B">HG明朝B</option>
+      <option value="HG明朝E">HG明朝E</option>
+      <option value="HG行書体">HG行書体</option>
+      <option value="HGｺﾞｼｯｸE">HGｺﾞｼｯｸE</option>
+      <option value="HGｺﾞｼｯｸM">HGｺﾞｼｯｸM</option>
+      <option value="Impact">Impact</option>
+      <option value="IrisUPC">IrisUPC</option>
+      <option value="JasmineUPC">JasmineUPC</option>
+      <option value="Juice ITC">Juice ITC</option>
+      <option value="KaiTi">KaiTi</option>
+      <option value="Kalinga">Kalinga</option>
+      <option value="Kartika">Kartika</option>
+      <option value="Khmer UI">Khmer UI</option>
+      <option value="KodchiangUPC">KodchiangUPC</option>
+      <option value="Kokila">Kokila</option>
+      <option value="Lao UI">Lao UI</option>
+      <option value="Latha">Latha</option>
+      <option value="Levenim MT">Levenim MT</option>
+      <option value="LilyUPC">LilyUPC</option>
+      <option value="Lucida Console">Lucida Console</option>
+      <option value="Lucida Handwriting">Lucida Handwriting</option>
+      <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+      <option value="Malgun Gothic">Malgun Gothic</option>
+      <option value="Mangal">Mangal</option>
+      <option value="Marlett">Marlett</option>
+      <option value="Microsoft Himalaya">Microsoft Himalaya</option>
+      <option value="Microsoft New Tai Lue">Microsoft New Tai Lue</option>
+      <option value="Microsoft PhagsPa">Microsoft PhagsPa</option>
+      <option value="Microsoft Sans Serif">Microsoft Sans Serif</option>
+      <option value="Microsoft Tai Le">Microsoft Tai Le</option>
+      <option value="Microsoft Uighur">Microsoft Uighur</option>
+      <option value="Microsoft Yi Baiti">Microsoft Yi Baiti</option>
+      <option value="MingLiU">MingLiU</option>
+      <option value="MingLiU-ExtB">MingLiU-ExtB</option>
+      <option value="MingLiU_HKSCS">MingLiU_HKSCS</option>
+      <option value="MingLiU_HKSCS-ExtB">MingLiU_HKSCS-ExtB</option>
+      <option value="Miriam">Miriam</option>
+      <option value="Miriam Fixed">Miriam Fixed</option>
+      <option value="Modern">Modern</option>
+      <option value="MoolBoran">MoolBoran</option>
+      <option value="MS Reference Specialty">MS Reference Specialty</option>
+      <option value="MS Sans Serif">MS Sans Serif</option>
+      <option value="MS Serif">MS Serif</option>
+      <option value="MS UI Gothic">MS UI Gothic</option>
+      <option value="MT Extra">MT Extra</option>
+      <option value="Narkisim">Narkisim</option>
+      <option value="Neo Sans">Neo Sans</option>
+      <option value="Nirmala UI">Nirmala UI</option>
+      <option value="NSimSun">NSimSun</option>
+      <option value="Nyala">Nyala</option>
+      <option value="OCRB">OCRB</option>
+      <option value="OpenSymbol">OpenSymbol</option>
+      <option value="Palatino Linotype">Palatino Linotype</option>
+      <option value="Papyrus">Papyrus</option>
+      <option value="PixelMplus10">PixelMplus10</option>
+      <option value="PixelMplus12">PixelMplus12</option>
+      <option value="Pristina">Pristina</option>
+      <option value="Raavi">Raavi</option>
+      <option value="Ricty Diminished">Ricty Diminished</option>
+      <option value="Ricty Diminished Discord">Ricty Diminished Discord</option>
+      <option value="Rod">Rod</option>
+      <option value="Roman">Roman</option>
+      <option value="Sakkal Majalla">Sakkal Majalla</option>
+      <option value="Script">Script</option>
+      <option value="Segoe Print">Segoe Print</option>
+      <option value="Segoe Script">Segoe Script</option>
+      <option value="Segoe UI">Segoe UI</option>
+      <option value="Segoe UI Light">Segoe UI Light</option>
+      <option value="Segoe UI Semilight">Segoe UI Semilight</option>
+      <option value="Segoe UI Symbol">Segoe UI Symbol</option>
+      <option value="Shonar Bangla">Shonar Bangla</option>
+      <option value="Shruti">Shruti</option>
+      <option value="SimHei">SimHei</option>
+      <option value="Simplified Arabic">Simplified Arabic</option>
+      <option value="Simplified Arabic Fixed">Simplified Arabic Fixed</option>
+      <option value="SimSun">SimSun</option>
+      <option value="SimSun-ExtB">SimSun-ExtB</option>
+      <option value="Small Fonts">Small Fonts</option>
+      <option value="Symbol">Symbol</option>
+      <option value="System">System</option>
+      <option value="Tahoma">Tahoma</option>
+      <option value="Tera Special">Tera Special</option>
+      <option value="Terminal">Terminal</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Trebuchet MS">Trebuchet MS</option>
+      <option value="Tunga">Tunga</option>
+      <option value="Utsaah">Utsaah</option>
+      <option value="Vani">Vani</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Vijaya">Vijaya</option>
+      <option value="Vrinda">Vrinda</option>
+      <option value="Webdings">Webdings</option>
+      <option value="Wingdings">Wingdings</option>
+      <option value="Yu Gothic UI">Yu Gothic UI</option>
+      <option value="Yu Gothic UI Light">Yu Gothic UI Light</option>
+      <option value="Yu Gothic UI Semilight">Yu Gothic UI Semilight</option>
+      <option value="国鉄方向幕書体 OTF">国鉄方向幕書体 OTF</option>
+      <option value="游ゴシック Light">游ゴシック Light</option>
+      <option value="游明朝 Demibold">游明朝 Demibold</option>
+      <option value="ＭＳ ゴシック">ＭＳ ゴシック</option>
+      <option value="ＭＳ 明朝">ＭＳ 明朝</option>
+      <option value="ＭＳ Ｐゴシック">ＭＳ Ｐゴシック</option>
+      <option value="ＭＳ Ｐ明朝">ＭＳ Ｐ明朝</option>
+    </select>
+    <input type="checkbox" id="outline">白抜き
+  </td>
+<tr>
+  <td colspan="2">
+    <button id="execute" class="btn btn-primary">実行</button>
+  </td>
+</tr>
+</table>
+
+
+</div>
+
+</center>
+
+</body>
+</html>
