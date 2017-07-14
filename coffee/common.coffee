@@ -7,6 +7,7 @@ $().ready ->
     '<a href="./anagram.html"><img width="32" height="32" src="favicon/anagram.ico"></a>'+' / '+
     '<a href="./random_picker.html"><img width="32" height="32" src="favicon/random_picker.ico"></a>'+' / '+
     '<a href="./telopper.html"><img width="32" height="32" src="favicon/telopper.ico"></a>'+' / '+
+    '<a href="./time_converter.html"><img width="32" height="32" src="favicon/time_converter.ico"></a>'+' / '+
     '<a href="https://github.com/rev84/tools" target="_blank">GitHub</a>'
   )
 

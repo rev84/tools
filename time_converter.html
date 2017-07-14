@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Time converter</title>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="./favicon/time_converter.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/time_converter.js"></script>
+<link rel="stylesheet" href="./css/common.css" type="text/css" />
+<link rel="stylesheet" href="./css/time_converter.css" type="text/css" />
+</head>
+<body>
+<div id="menu"></div>
+
+<h1>Time converter</h1>
+
+<center>
+
+<table>
+  <tr>
+    <td id="left">
+      <input type="text" id="milisecond">ミリ秒<br>
+      
+      <input type="text" id="second">秒
+      <br>
+      <br>
+      <br>
+      <select id="left_timezone">
+<option value="-12.00">(UTC-12:00) 国際日付変更線 西側</option>
+<option value="-11.00">(UTC-11:00) 協定世界時-11</option>
+<option value="-10.00">(UTC-10:00) ハワイ</option>
+<option value="-09.00">(UTC-09:00) アラスカ</option>
+<option value="-08.00">(UTC-08:00) バハカリフォルニア</option>
+<option value="-08.00">(UTC-08:00) 太平洋標準時(米国およびカナダ)</option>
+<option value="-07.00">(UTC-07:00) チワワ、ラパス、マサトラン</option>
+<option value="-07.00">(UTC-07:00) アリゾナ</option>
+<option value="-07.00">(UTC-07:00) 山地標準時(米国およびカナダ)</option>
+<option value="-06.00">(UTC-06:00) 中央アメリカ</option>
+<option value="-06.00">(UTC-06:00) 中部標準時(米国およびカナダ)</option>
+<option value="-06.00">(UTC-06:00) サスカチュワン</option>
+<option value="-06.00">(UTC-06:00) グアダラハラ、メキシコシティ、モンテレー</option>
+<option value="-05.00">(UTC-05:00) ボゴタ、リマ、キト</option>
+<option value="-05.00">(UTC-05:00) インディアナ東部</option>
+<option value="-05.00">(UTC-05:00) 東部標準時(米国およびカナダ)</option>
+<option value="-04.30">(UTC-04:30) カラカス</option>
+<option value="-04.00">(UTC-04:00) 大西洋標準時(カナダ)</option>
+<option value="-04.00">(UTC-04:00) アスンシオン</option>
+<option value="-04.00">(UTC-04:00) ジョージタウン、ラパス、マナウス、サンフアン</option>
+<option value="-04.00">(UTC-04:00) クイアバ</option>
+<option value="-04.00">(UTC-04:00) サンチアゴ</option>
+<option value="-03.30">(UTC-03:30) ニューファンドランド</option>
+<option value="-03.00">(UTC-03:00) ブラジリア</option>
+<option value="-03.00">(UTC-03:00) グリーンランド</option>
+<option value="-03.00">(UTC-03:00) カイエンヌ、フォルタレザ</option>
+<option value="-03.00">(UTC-03:00) ブエノスアイレス</option>
+<option value="-03.00">(UTC-03:00) モンテビデオ</option>
+<option value="-02.00">(UTC-02:00) 協定世界時-2</option>
+<option value="-01.00">(UTC-01:00) カーボベルデ諸島</option>
+<option value="-01.00">(UTC-01:00) アゾレス</option>
+<option value="+00.00">(UTC+00:00) カサブランカ</option>
+<option value="+00.00">(UTC+00:00) モンロビア、レイキャビク</option>
+<option value="+00.00">(UTC+00:00) ダブリン、エジンバラ、リスボン、ロンドン</option>
+<option value="+00.00">(UTC+00:00) 協定世界時</option>
+<option value="+01.00">(UTC+01:00) アムステルダム、ベルリン、ベルン、ローマ、ストックホルム、ウィーン</option>
+<option value="+01.00">(UTC+01:00) ブリュッセル、コペンハーゲン、マドリード、パリ</option>
+<option value="+01.00">(UTC+01:00) 西中央アフリカ</option>
+<option value="+01.00">(UTC+01:00) ベオグラード、ブラチスラバ、ブダペスト、リュブリャナ、プラハ</option>
+<option value="+01.00">(UTC+01:00) サラエボ、スコピエ、ワルシャワ、ザグレブ</option>
+<option value="+01.00">(UTC+01:00) ウィントフック</option>
+<option value="+02.00">(UTC+02:00) アテネ、ブカレスト、イスタンブール</option>
+<option value="+02.00">(UTC+02:00) ヘルシンキ、キエフ、リガ、ソフィア、タリン、ビリニュス</option>
+<option value="+02.00">(UTC+02:00) カイロ</option>
+<option value="+02.00">(UTC+02:00) ダマスカス</option>
+<option value="+02.00">(UTC+02:00) アンマン</option>
+<option value="+02.00">(UTC+02:00) ハラーレ、プレトリア</option>
+<option value="+02.00">(UTC+02:00) エルサレム</option>
+<option value="+02.00">(UTC+02:00) ベイルート</option>
+<option value="+03.00">(UTC+03:00) バグダッド</option>
+<option value="+03.00">(UTC+03:00) ミンスク</option>
+<option value="+03.00">(UTC+03:00) クエート、リヤド</option>
+<option value="+03.00">(UTC+03:00) ナイロビ</option>
+<option value="+03.30">(UTC+03:30) テヘラン</option>
+<option value="+04.00">(UTC+04:00) モスクワ、サンクトペテルブルグ、ボルゴグラード</option>
+<option value="+04.00">(UTC+04:00) トビリシ</option>
+<option value="+04.00">(UTC+04:00) エレバン</option>
+<option value="+04.00">(UTC+04:00) アブダビ、マスカット</option>
+<option value="+04.00">(UTC+04:00) バクー</option>
+<option value="+04.00">(UTC+04:00) ポートルイス</option>
+<option value="+04.30">(UTC+04:30) カブール</option>
+<option value="+05.00">(UTC+05:00) タシケント</option>
+<option value="+05.00">(UTC+05:00) イスラマバード、カラチ</option>
+<option value="+05.30">(UTC+05:30) スリジャヤワルダナプラコッテ</option>
+<option value="+05.30">(UTC+05:30) チェンナイ、コルカタ、ムンバイ、ニューデリー</option>
+<option value="+05.45">(UTC+05:45) カトマンズ</option>
+<option value="+06.00">(UTC+06:00) アスタナ</option>
+<option value="+06.00">(UTC+06:00) ダッカ</option>
+<option value="+06.00">(UTC+06:00) エカテリンブルグ</option>
+<option value="+06.30">(UTC+06:30) ヤンゴン(ラングーン)</option>
+<option value="+07.00">(UTC+07:00) バンコク、ハノイ、ジャカルタ</option>
+<option value="+07.00">(UTC+07:00) ノヴォシビルスク</option>
+<option value="+08.00">(UTC+08:00) クラスノヤルスク</option>
+<option value="+08.00">(UTC+08:00) ウランバートル</option>
+<option value="+08.00">(UTC+08:00) 北京、重慶、香港特別行政区、ウルムチ</option>
+<option value="+08.00">(UTC+08:00) パース</option>
+<option value="+08.00">(UTC+08:00) クアラルンプール、シンガポール</option>
+<option value="+08.00">(UTC+08:00) 台北</option>
+<option value="+09.00">(UTC+09:00) イルクーツク</option>
+<option value="+09.00">(UTC+09:00) ソウル</option>
+<option value="+09.00" selected="selected">(UTC+09:00) 大阪、札幌、東京</option>
+<option value="+09.30">(UTC+09:30) ダーウィン</option>
+<option value="+09.30">(UTC+09:30) アデレード</option>
+<option value="+10.00">(UTC+10:00) ホバート</option>
+<option value="+10.00">(UTC+10:00) ヤクーツク</option>
+<option value="+10.00">(UTC+10:00) ブリスベン</option>
+<option value="+10.00">(UTC+10:00) グアム、ポートモレスビー</option>
+<option value="+10.00">(UTC+10:00) キャンベラ、メルボルン、シドニー</option>
+<option value="+11.00">(UTC+11:00) ウラジオストク</option>
+<option value="+11.00">(UTC+11:00) ソロモン諸島、ニューカレドニア</option>
+<option value="+12.00">(UTC+12:00) 協定世界時+12</option>
+<option value="+12.00">(UTC+12:00) フィジー、マーシャル諸島</option>
+<option value="+12.00">(UTC+12:00) マガダン</option>
+<option value="+12.00">(UTC+12:00) オークランド、ウェリントン</option>
+<option value="+13.00">(UTC+13:00) ヌクアロファ</option>
+<option value="+13.00">(UTC+13:00) サモア</option>
+      </select>
+    </td>
+    <td id="center">
+      <button id="to_right">→</button>
+      <br>
+      <br>
+      <button id="to_left">←</button>
+    </td>
+    <td id="right">
+      日付<br>
+      <input type="text" id="date">
+      <br>
+      <br>
+      <br>
+      <select id="right_timezone">
+<option value="-12.00">(UTC-12:00) 国際日付変更線 西側</option>
+<option value="-11.00">(UTC-11:00) 協定世界時-11</option>
+<option value="-10.00">(UTC-10:00) ハワイ</option>
+<option value="-09.00">(UTC-09:00) アラスカ</option>
+<option value="-08.00">(UTC-08:00) バハカリフォルニア</option>
+<option value="-08.00">(UTC-08:00) 太平洋標準時(米国およびカナダ)</option>
+<option value="-07.00">(UTC-07:00) チワワ、ラパス、マサトラン</option>
+<option value="-07.00">(UTC-07:00) アリゾナ</option>
+<option value="-07.00">(UTC-07:00) 山地標準時(米国およびカナダ)</option>
+<option value="-06.00">(UTC-06:00) 中央アメリカ</option>
+<option value="-06.00">(UTC-06:00) 中部標準時(米国およびカナダ)</option>
+<option value="-06.00">(UTC-06:00) サスカチュワン</option>
+<option value="-06.00">(UTC-06:00) グアダラハラ、メキシコシティ、モンテレー</option>
+<option value="-05.00">(UTC-05:00) ボゴタ、リマ、キト</option>
+<option value="-05.00">(UTC-05:00) インディアナ東部</option>
+<option value="-05.00">(UTC-05:00) 東部標準時(米国およびカナダ)</option>
+<option value="-04.30">(UTC-04:30) カラカス</option>
+<option value="-04.00">(UTC-04:00) 大西洋標準時(カナダ)</option>
+<option value="-04.00">(UTC-04:00) アスンシオン</option>
+<option value="-04.00">(UTC-04:00) ジョージタウン、ラパス、マナウス、サンフアン</option>
+<option value="-04.00">(UTC-04:00) クイアバ</option>
+<option value="-04.00">(UTC-04:00) サンチアゴ</option>
+<option value="-03.30">(UTC-03:30) ニューファンドランド</option>
+<option value="-03.00">(UTC-03:00) ブラジリア</option>
+<option value="-03.00">(UTC-03:00) グリーンランド</option>
+<option value="-03.00">(UTC-03:00) カイエンヌ、フォルタレザ</option>
+<option value="-03.00">(UTC-03:00) ブエノスアイレス</option>
+<option value="-03.00">(UTC-03:00) モンテビデオ</option>
+<option value="-02.00">(UTC-02:00) 協定世界時-2</option>
+<option value="-01.00">(UTC-01:00) カーボベルデ諸島</option>
+<option value="-01.00">(UTC-01:00) アゾレス</option>
+<option value="+00.00">(UTC+00:00) カサブランカ</option>
+<option value="+00.00">(UTC+00:00) モンロビア、レイキャビク</option>
+<option value="+00.00">(UTC+00:00) ダブリン、エジンバラ、リスボン、ロンドン</option>
+<option value="+00.00">(UTC+00:00) 協定世界時</option>
+<option value="+01.00">(UTC+01:00) アムステルダム、ベルリン、ベルン、ローマ、ストックホルム、ウィーン</option>
+<option value="+01.00">(UTC+01:00) ブリュッセル、コペンハーゲン、マドリード、パリ</option>
+<option value="+01.00">(UTC+01:00) 西中央アフリカ</option>
+<option value="+01.00">(UTC+01:00) ベオグラード、ブラチスラバ、ブダペスト、リュブリャナ、プラハ</option>
+<option value="+01.00">(UTC+01:00) サラエボ、スコピエ、ワルシャワ、ザグレブ</option>
+<option value="+01.00">(UTC+01:00) ウィントフック</option>
+<option value="+02.00">(UTC+02:00) アテネ、ブカレスト、イスタンブール</option>
+<option value="+02.00">(UTC+02:00) ヘルシンキ、キエフ、リガ、ソフィア、タリン、ビリニュス</option>
+<option value="+02.00">(UTC+02:00) カイロ</option>
+<option value="+02.00">(UTC+02:00) ダマスカス</option>
+<option value="+02.00">(UTC+02:00) アンマン</option>
+<option value="+02.00">(UTC+02:00) ハラーレ、プレトリア</option>
+<option value="+02.00">(UTC+02:00) エルサレム</option>
+<option value="+02.00">(UTC+02:00) ベイルート</option>
+<option value="+03.00">(UTC+03:00) バグダッド</option>
+<option value="+03.00">(UTC+03:00) ミンスク</option>
+<option value="+03.00">(UTC+03:00) クエート、リヤド</option>
+<option value="+03.00">(UTC+03:00) ナイロビ</option>
+<option value="+03.30">(UTC+03:30) テヘラン</option>
+<option value="+04.00">(UTC+04:00) モスクワ、サンクトペテルブルグ、ボルゴグラード</option>
+<option value="+04.00">(UTC+04:00) トビリシ</option>
+<option value="+04.00">(UTC+04:00) エレバン</option>
+<option value="+04.00">(UTC+04:00) アブダビ、マスカット</option>
+<option value="+04.00">(UTC+04:00) バクー</option>
+<option value="+04.00">(UTC+04:00) ポートルイス</option>
+<option value="+04.30">(UTC+04:30) カブール</option>
+<option value="+05.00">(UTC+05:00) タシケント</option>
+<option value="+05.00">(UTC+05:00) イスラマバード、カラチ</option>
+<option value="+05.30">(UTC+05:30) スリジャヤワルダナプラコッテ</option>
+<option value="+05.30">(UTC+05:30) チェンナイ、コルカタ、ムンバイ、ニューデリー</option>
+<option value="+05.45">(UTC+05:45) カトマンズ</option>
+<option value="+06.00">(UTC+06:00) アスタナ</option>
+<option value="+06.00">(UTC+06:00) ダッカ</option>
+<option value="+06.00">(UTC+06:00) エカテリンブルグ</option>
+<option value="+06.30">(UTC+06:30) ヤンゴン(ラングーン)</option>
+<option value="+07.00">(UTC+07:00) バンコク、ハノイ、ジャカルタ</option>
+<option value="+07.00">(UTC+07:00) ノヴォシビルスク</option>
+<option value="+08.00">(UTC+08:00) クラスノヤルスク</option>
+<option value="+08.00">(UTC+08:00) ウランバートル</option>
+<option value="+08.00">(UTC+08:00) 北京、重慶、香港特別行政区、ウルムチ</option>
+<option value="+08.00">(UTC+08:00) パース</option>
+<option value="+08.00">(UTC+08:00) クアラルンプール、シンガポール</option>
+<option value="+08.00">(UTC+08:00) 台北</option>
+<option value="+09.00">(UTC+09:00) イルクーツク</option>
+<option value="+09.00">(UTC+09:00) ソウル</option>
+<option value="+09.00" selected="selected">(UTC+09:00) 大阪、札幌、東京</option>
+<option value="+09.30">(UTC+09:30) ダーウィン</option>
+<option value="+09.30">(UTC+09:30) アデレード</option>
+<option value="+10.00">(UTC+10:00) ホバート</option>
+<option value="+10.00">(UTC+10:00) ヤクーツク</option>
+<option value="+10.00">(UTC+10:00) ブリスベン</option>
+<option value="+10.00">(UTC+10:00) グアム、ポートモレスビー</option>
+<option value="+10.00">(UTC+10:00) キャンベラ、メルボルン、シドニー</option>
+<option value="+11.00">(UTC+11:00) ウラジオストク</option>
+<option value="+11.00">(UTC+11:00) ソロモン諸島、ニューカレドニア</option>
+<option value="+12.00">(UTC+12:00) 協定世界時+12</option>
+<option value="+12.00">(UTC+12:00) フィジー、マーシャル諸島</option>
+<option value="+12.00">(UTC+12:00) マガダン</option>
+<option value="+12.00">(UTC+12:00) オークランド、ウェリントン</option>
+<option value="+13.00">(UTC+13:00) ヌクアロファ</option>
+<option value="+13.00">(UTC+13:00) サモア</option>
+      </select>
+    </td>
+  </tr>
+</table>
+
+</center>
+
+</body>
+</html>
