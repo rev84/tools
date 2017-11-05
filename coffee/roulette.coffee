@@ -64,7 +64,6 @@ start = ->
   window.timer = setInterval(rotateRoulette, 1000 / window.CONST.FPS)
 
   soundReset()
-  hideResult()
   doButtonStop()
 
 stop = ->
@@ -131,26 +130,8 @@ result = ->
   doButtonEnable()
 
 showResult = (text)->
-  w = $('#roulette_window').width()
-  h = $('#roulette_window').height()
-  c =
-    $('<canvas width="'+w+'" height="'+h+'">').attr('id', 'result')
-    .drawText({
-      fillStyle: '#9cf'
-      strokeStyle: '#25a'
-      strokeWidth: 5
-      x: w/2
-      y: h/2
-      maxWidth: Math.floor(w*0.9)
-      fontSize: '75pt'
-      fontFamily: 'Noto Sans Japanese, Verdana, sans-serif'
-      text: text
-      align: 'center'
-    })
-  $('#roulette_window').append c
-
-hideResult = ->
-  $('#result').remove()
+  $('#result_content').html(text)
+  $('#result').modal('show')
 
 getResult = (rad)->
   radOne = (2 * Math.PI) / window.alternatives.length
@@ -168,6 +149,7 @@ generateRoulette = ->
   if alts.length <= 0
     emptyMessage = '''
                    選択肢を1つ以上
+
                    入れてください
                    '''
     alts.push emptyMessage
@@ -182,7 +164,10 @@ generateRoulette = ->
   colorNum-- if alts.length % colorNum == 1
 
   # フォントサイズを変える
-  fontSize = window.CONST.FONT_SIZE / (1+alts.length*0.05)
+  fontSize = if alts.length <= 0
+    window.CONST.FONT_SIZE / (1+alts.length*0.05)
+  else
+    window.CONST.FONT_SIZE * 0.8
 
   alts.forEach (text, index)->
     baseRad  = 2 * Math.PI / alts.length
@@ -223,7 +208,6 @@ generateRoulette = ->
 
     $('#roulette_join').append c
 
-  hideResult()
   window.rotate = 0
   rotateJoin()
   window.speed = false

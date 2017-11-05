@@ -35,18 +35,6 @@ canvas {
   z-index: 9999;
 }
 
-#result {
-  width: 600px;
-  height: 500px;
-  background-color: #bbbbbb;
-  opacity: 0.8;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0 auto;
-  vertical-align: middle;
-  z-index: 99999;
-}
-#result span {
+#result_content {
   font-size: 300%;
 }
