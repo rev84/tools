@@ -1,15 +1,21 @@
+window.TOOLS = [
+  'json_viewer'
+  'case_converter'
+  'password_generator'
+  'qrcode'
+  'anagram'
+  'roulette'
+  'random_picker'
+  'telopper'
+  'time_converter'
+]
+
 $().ready ->
-  $('#menu').html(
-    '<a href="./json_viewer.html"><img width="32" height="32" src="favicon/json_viewer.ico"></a>'+' / '+
-    '<a href="./case_converter.html"><img width="32" height="32" src="favicon/case_converter.ico"></a>'+' / '+
-    '<a href="./password_generator.html"><img width="32" height="32" src="favicon/password_generator.ico"></a>'+' / '+
-    '<a href="./qrcode.html"><img width="32" height="32" src="favicon/qrcode.ico"></a>'+' / '+
-    '<a href="./anagram.html"><img width="32" height="32" src="favicon/anagram.ico"></a>'+' / '+
-    '<a href="./random_picker.html"><img width="32" height="32" src="favicon/random_picker.ico"></a>'+' / '+
-    '<a href="./telopper.html"><img width="32" height="32" src="favicon/telopper.ico"></a>'+' / '+
-    '<a href="./time_converter.html"><img width="32" height="32" src="favicon/time_converter.ico"></a>'+' / '+
-    '<a href="https://github.com/rev84/tools" target="_blank">GitHub</a>'
-  )
+  htmls = []
+  for toolName in window.TOOLS
+    htmls.push '<a href="./'+toolName+'.html"><img width="32" height="32" src="favicon/'+toolName+'.ico"></a>'
+  htmls.push '<a href="https://github.com/rev84/tools" target="_blank">GitHub</a>'
+  $('#menu').html(htmls.join(' / '))
 
 mt_rand = (min, max)->
   Math.round()
