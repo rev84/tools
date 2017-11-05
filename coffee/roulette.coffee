@@ -164,7 +164,7 @@ generateRoulette = ->
   colorNum-- if alts.length % colorNum == 1
 
   # フォントサイズを変える
-  fontSize = if alts.length <= 0
+  fontSize = unless emptyMessage
     window.CONST.FONT_SIZE / (1+alts.length*0.05)
   else
     window.CONST.FONT_SIZE * 0.8
@@ -196,7 +196,7 @@ generateRoulette = ->
       fillStyle: '#000000'
       strokeStyle: '#000000'
       strokeWidth: 2
-      x: 50
+      x: 30
       y: (h - fontSize)/2
       fontSize: ''+fontSize+'pt'
       fontFamily: 'Noto Sans Japanese, Verdana, sans-serif'

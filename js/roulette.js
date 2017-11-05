@@ -182,7 +182,7 @@ generateRoulette = function() {
   if (alts.length % colorNum === 1) {
     colorNum--;
   }
-  fontSize = alts.length <= 0 ? window.CONST.FONT_SIZE / (1 + alts.length * 0.05) : window.CONST.FONT_SIZE * 0.8;
+  fontSize = !emptyMessage ? window.CONST.FONT_SIZE / (1 + alts.length * 0.05) : window.CONST.FONT_SIZE * 0.8;
   alts.forEach(function(text, index) {
     var baseRad, c, startRad;
     baseRad = 2 * Math.PI / alts.length;
@@ -206,7 +206,7 @@ generateRoulette = function() {
       fillStyle: '#000000',
       strokeStyle: '#000000',
       strokeWidth: 2,
-      x: 50,
+      x: 30,
       y: (h - fontSize) / 2,
       fontSize: '' + fontSize + 'pt',
       fontFamily: 'Noto Sans Japanese, Verdana, sans-serif',
