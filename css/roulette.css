@@ -2,6 +2,7 @@
   position: relative;
   width: 600px;
   height: 500px;
+  border: 1px double #000000;
   overflow: hidden;
 }
 #roulette_join {
@@ -21,10 +22,10 @@ canvas {
 }
 
 #btn {
-  width: 180px;
-  height: 45px;
-  font-size: 25px;
-  margin:2px;
+  width: 250px;
+  height: 85px;
+  font-size: 55px;
+  margin:5px;
   text-align:center;
 }
 
@@ -32,4 +33,20 @@ canvas {
   position: absolute;
   width: 100px;
   z-index: 9999;
+}
+
+#result {
+  width: 600px;
+  height: 500px;
+  background-color: #bbbbbb;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  vertical-align: middle;
+  z-index: 99999;
+}
+#result span {
+  font-size: 300%;
 }
