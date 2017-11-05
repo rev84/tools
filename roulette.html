@@ -6,6 +6,7 @@
 <link rel="shortcut icon" href="./favicon/roulette.ico">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/20.1.3/min/jcanvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/autosize@4.0.0/dist/autosize.min.js"></script>
 <script src="./js/common.js"></script>
 <script src="./js/roulette.js"></script>
 <link rel="stylesheet" href="./css/common.css" type="text/css" />
@@ -14,13 +15,32 @@
 <body>
 <div id="menu"></div>
 
+<center>
+
 <h1>Roulette</h1>
 <div id="roulette_window">
-  <canvas id="roulette" width="1000px" height="1000px"></canvas>
+  <img id="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAArlBMVEUAAADZACbZACbYACfX
+ACjMADPZACbYACfYACfbACTYACfZACbbACTYACfVACvXACjXACjYACfaACXWACnXACjYACfXACjY
+ACfZACbYACfaACXXACjYACfXACjYACfZACbYACfYACfYACfSAC3YACfZACbYACfYACfWACnXACjY
+ACfZACbYACfaACXbACTVACrWACnYACfXACjYACfYACfTACzYACfZACbYACcAAADb0WHlAAAAOHRS
+TlMAFHGRXwU86dAc89sx0h7OLfE3ODnyOjs99D4/9UBBV/pUzRGd6PbERUzMKOcpKiss6ibGGhd2
+koe51fMAAAABYktHRACIBR1IAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QsFDh05+zVq
+ugAAANFJREFUWMPt18cOgkAYReGxgYLYe++91//9n0yQuDMxzklEEu7+fFFgMaNUtJ8sFk8kU6A3
+TBFJZ/R7S7zZukLW7/UFRwQJOREmZIQKeSoUilQoYaGMhUqVCrU/EOoWFQwsNJpUaGGhzYUOFbpY
+6L0T+s5ANPcUhrr1SxgRQOyx0v79/iaK9TLlwIz+hTnq3Ye4QL33ISxX7EP6ausN67e0nwbb74Lu
+TdbvQ94fjuHuT7BXZ9hfYM+PuviwzY/7+MLhCt6LBFcepa63O7p0Rfu0B36i9jjvk1phAAAAJXRF
+WHRkYXRlOmNyZWF0ZQAyMDE3LTExLTA1VDE0OjI5OjU3KzAxOjAwG0hJ4wAAACV0RVh0ZGF0ZTpt
+b2RpZnkAMjAxNy0xMS0wNVQxNDoyOTo1NyswMTowMGoV8V8AAAAZdEVYdFNvZnR3YXJlAHd3dy5p
+bmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC">
+  <div id="roulette_join"></div>
 </div>
 
-<button id="start">start</button>
+<p>
+  <button id="btn"></button>
+</p>
 
+<h2>選択肢</h2>
 <textarea id="alternatives">11111111111
 222222222
 333333333333
@@ -28,6 +48,8 @@
 55555555555
 6666666666
 777777777777777777777</textarea>
+
+</center>
 
 </body>
 </html>
