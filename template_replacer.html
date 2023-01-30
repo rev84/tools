@@ -22,7 +22,19 @@
   <table>
     <tr>
       <th>テンプレート中の置換される文字列</th>
-      <td><input type="text" id="needle" value="■"></td>
+      <td>
+        <input type="text" id="needle" value="■">
+        <input type="checkbox" id="calcable">演算を可能にする
+        <button onclick="alert('※カッコ前とカッコ後で囲まれた部分について、置換される文字列を数字に置き換えた後、計算します。例：#{■+2}')")>？</button>
+      </td>
+    </tr>
+    <tr class="calcable_config no_display">
+      <th>カッコ前</th>
+      <td><input type="text" id="kakko_start" value="#{"></td>
+    </tr>
+    <tr class="calcable_config no_display">
+      <th>カッコ後</th>
+      <td><input type="text" id="kakko_end" value="}"></td>
     </tr>
     <tr>
       <th>開始番号</th>

@@ -7,3 +7,6 @@ body {
 .center {
   text-align:center;
 }
+.no_display {
+  display: none;
+}

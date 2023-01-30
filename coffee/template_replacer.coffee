@@ -5,6 +5,13 @@ window.GLOBAL =
 $().ready ->
   $('#replace').on 'click', replace
   $('#copy').on 'click', clipboradCopy
+  $('#calcable').on 'change', calcableConfig
+
+calcableConfig = ->
+  if $('#calcable').prop('checked')
+    $('.calcable_config').removeClass('no_display')
+  else
+    $('.calcable_config').addClass('no_display')
 
 replace = ->
   needle = $('#needle').val()
@@ -12,6 +19,9 @@ replace = ->
   end = Number $('#end').val()
   pace = Number $('#pace').val()
   template = $('#template').val()
+  calcable = $('#calcable').prop('checked')
+  kakko_start = $('#kakko_start').val()
+  kakko_end = $('#kakko_end').val()
 
   return alert('開始番号が異常です') if isNaN(start)
   return alert('終了番号が異常です') if isNaN(end)
@@ -24,7 +34,14 @@ replace = ->
   res = ''
   count = start
   while true
-    res += template.replaceAll(needle, count.toString())
+    if calcable
+      reg = new RegExp(''+kakko_start+'([^'+kakko_end+']*)'+kakko_end, 'g')
+      replaceString = (str, p)->
+        eval(p.replaceAll(needle, count))
+      res += template.replaceAll(reg, replaceString)
+    else
+      res += template.replaceAll(needle, count.toString())
+
     count += pace
     break if (pace < 0 and count < end) or (pace > 0 and count > end)
 
