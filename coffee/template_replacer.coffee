@@ -24,7 +24,7 @@ replace = ->
   res = ''
   count = start
   while true
-    res += template.replace(needle, count.toString())
+    res += template.replaceAll(needle, count.toString())
     count += pace
     break if (pace < 0 and count < end) or (pace > 0 and count > end)
 

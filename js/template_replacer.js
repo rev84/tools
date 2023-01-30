@@ -38,7 +38,7 @@ replace = function() {
   res = '';
   count = start;
   while (true) {
-    res += template.replace(needle, count.toString());
+    res += template.replaceAll(needle, count.toString());
     count += pace;
     if ((pace < 0 && count < end) || (pace > 0 && count > end)) {
       break;
