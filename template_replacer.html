@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Template Replacer</title>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="./favicon/template_replacer.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="./js/clipboard.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/template_replacer.js"></script>
+<link rel="stylesheet" href="./css/common.css" type="text/css" />
+<link rel="stylesheet" href="./css/template_replacer.css" type="text/css" />
+</head>
+<body>
+<div id="menu"></div>
+
+<h1>Template Replacer</h1>
+<p id="message">
+</p>
+<center>
+<div>
+  <table>
+    <tr>
+      <th>テンプレート中の置換される文字列</th>
+      <td><input type="text" id="needle" value="■"></td>
+    </tr>
+    <tr>
+      <th>開始番号</th>
+      <td><input type="number" id="start" value="1"></td>
+    </tr>
+    <tr>
+      <th>終了番号</th>
+      <td><input type="number" id="end" value="100"></td>
+    </tr>
+    <tr>
+      <th>番号の増加量</th>
+      <td><input type="number" id="pace" value="1"></td>
+    </tr>
+  </table>
+  <h2>テンプレート</h2>
+  <textarea id="template">テスト■
+</textarea>
+  <p>
+    <button id="replace">↓置き換え↓</button>
+    <button id="copy">クリップボードにコピー</button>
+  </p>
+  <pre id="result">
+  </pre>
+</div>
+</center>
+</body>
+</html>

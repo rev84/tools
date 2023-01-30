@@ -4,6 +4,7 @@ window.TOOLS = [
   'password_generator'
   'qrcode'
   'anagram'
+  'template_replacer'
   'roulette'
   'random_picker'
   'telopper'

@@ -1,0 +1,9 @@
+#result {
+  text-align: left;
+  border: 1px solid #000;
+  background-color: azure;
+}
+#template {
+  width: 300px;
+  height: 200px;
+}
